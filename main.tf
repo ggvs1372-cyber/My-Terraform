@@ -1,22 +1,22 @@
 resource "aws_vpc" "main" {
-  cidr_block = var.cidr_block
+  cidr_block = var.vpc_cidr
   tags = {
-    Name = var.tag
+    Name = var.tag_vpc
   }
 }
 
-resource "aws_subnet" "main" {
-  vpc_id     = aws_vpc.main.id
-  cidr_block = var.cidr_block_main
+resource "aws_subnet" "subnet1" {
+  vpc_id            = aws_vpc.main.id
+  cidr_block        = var.subnet1_cidr
   tags = {
-    Name = var.tag_mainsubnet
+    Name = var.tag_subnet1
   }
 }
 
-resource "aws_subnet" "main1" {
-  vpc_id = aws_vpc.main.id
-  cidr_block = var.cidr_block_subnet2
+resource "aws_subnet" "subnet2" {
+  vpc_id            = aws_vpc.main.id
+  cidr_block        = var.subnet2_cidr
   tags = {
-    Name = var.tag_mainsubnet2
+    Name = var.tag_subnet2
   }
 }

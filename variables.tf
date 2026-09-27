@@ -1,35 +1,36 @@
-variable "cidr_block" {
+variable "vpc_cidr" {
   description = "The CIDR block for the VPC"
   type        = string
   default     = "10.0.0.0/16"
 }
 
-variable "tag" {
-  description = "The VPC ID"
+variable "tag_vpc" {
+  description = "Tag for the VPC"
   type        = string
-  default     = "web-vpc"
+  default     = "dev-vpc"
 }
 
-variable "cidr_block_main" {
-  description = "The CIDR block for the VPC"
+variable "subnet1_cidr" {
+  description = "The CIDR block for the first subnet"
   type        = string
   default     = "10.0.1.0/24"
 }
 
-variable "tag_mainsubnet" {
-  description = "The subnet1 name"
+  variable "tag_subnet1" {
+  description = "Tag for the subnet1"
   type        = string
-  default     = "subnet1"
+  default     = "dev-subnet1"
 }
 
-variable "cidr_block_subnet2" {
-  description = "The CIDR block for the subnet2"
+variable "tag_subnet2" {
+  description = "Tag for the subnet2"
+  type        = string
+  default     = "dev-subnet2"
+}
+
+variable "subnet2_cidr" {
+  description = "The CIDR block for the second subnet"
   type        = string
   default     = "10.0.2.0/24"
 }
 
-variable "tag_mainsubnet2" {
-  description = "The subnet2 name"
-  type        = string
-  default     = "subnet2"
-}
